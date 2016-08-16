@@ -16,7 +16,8 @@ const common = {
   // We'll be using the latter form given it's
   // convenient with more complex configurations.
   entry: {
-    app: PATHS.app
+    app: PATHS.app,
+    vendor: ['react']
   },
   output: {
     path: PATHS.build,
