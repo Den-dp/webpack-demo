@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
+    "start": "webpack-dev-server",
     "serve": "serve build"
   },
   "repository": {
@@ -23,6 +24,7 @@
     "html-webpack-plugin": "^2.22.0",
     "serve": "^1.4.0",
     "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.14.1",
     "webpack-validator": "^2.2.7"
   }
