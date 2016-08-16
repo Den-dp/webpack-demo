@@ -6,7 +6,7 @@ exports.setupCSS = function(paths) {
       loaders: [
         {
           test: /\.css$/,
-          loaders: ['style', 'css'],
+          loaders: ['style', 'css?sourceMap'],
           // If include isn't set, Webpack will traverse all files within the base directory.
           // This can hurt performance! It is a good idea to set up include always.
           // There's also exclude option that may come in handy. Prefer include, however.
