@@ -47,6 +47,10 @@ switch(process.env.npm_lifecycle_event) {
         // source-map	            Original source	    The best quality with the most complete result, but also the slowest.
         devtool: 'source-map'
       },
+      parts.setFreeVariable(
+        'process.env.NODE_ENV',
+        'production'
+      ),
       parts.minify(),
       parts.setupCSS(PATHS.app)
     );
