@@ -35,8 +35,16 @@ var config;
 switch(process.env.npm_lifecycle_event) {
   case 'build':
     config = merge(
-      common,
+      common,   
       {
+        // production usage friendly sourcemaps:
+        // =====================================
+        // Sourcemap type	        Quality	            Notes
+        // cheap-source-map	        Transformed code	Generated sourcemaps don't have column mappings. Sourcemaps from loaders are not used.
+        //                          (lines only)
+        // cheap-module-source-map	Original source     Same except sourcemaps from loaders are simplified to a single mapping per line.
+        //                          (lines only)
+        // source-map	            Original source	    The best quality with the most complete result, but also the slowest.
         devtool: 'source-map'
       },
       parts.setupCSS(PATHS.app)
@@ -46,6 +54,15 @@ switch(process.env.npm_lifecycle_event) {
     config = merge(
       common,
       {
+        // dev friendly sourcemaps:
+        // ========================
+        // Sourcemap type                 Quality             Notes
+        // eval	                        Generated code	    Each module is executed with eval and //@ sourceURL.
+        // cheap-eval-source-map	        Transformed code	Each module is executed with eval and a sourcemap is added as a dataurl to the eval.
+        //                                (lines only)
+        // cheap-module-eval-source-map	Original source	    Same idea, but higher quality with lower performance.
+        //                                (lines only)
+        // eval-source-map        	    Original source	    Same idea, but highest quality and lowest performance.
         devtool: 'eval-source-map'
       },
       parts.setupCSS(PATHS.app),
