@@ -23,6 +23,7 @@
     "html-webpack-plugin": "^2.22.0",
     "serve": "^1.4.0",
     "webpack": "^1.13.1",
-    "webpack-merge": "^0.14.1"
+    "webpack-merge": "^0.14.1",
+    "webpack-validator": "^2.2.7"
   }
 }
