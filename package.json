@@ -1,0 +1,27 @@
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "serve": "serve build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Den-dp/webpack-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Den-dp/webpack-demo/issues"
+  },
+  "homepage": "https://github.com/Den-dp/webpack-demo#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^2.22.0",
+    "serve": "^1.4.0",
+    "webpack": "^1.13.1"
+  }
+}
