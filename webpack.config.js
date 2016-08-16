@@ -47,7 +47,14 @@ switch(process.env.npm_lifecycle_event) {
         // cheap-module-source-map	Original source     Same except sourcemaps from loaders are simplified to a single mapping per line.
         //                          (lines only)
         // source-map	            Original source	    The best quality with the most complete result, but also the slowest.
-        devtool: 'source-map'
+        devtool: 'source-map',
+        output: {
+          path: PATHS.build,
+          filename: '[name].[chunkhash].js',
+          // This is used for require.ensure. The setup
+          // will work without but this is useful to set.
+          chunkFilename: '[chunkhash].js'
+        }
       },
       parts.setFreeVariable(
         'process.env.NODE_ENV',
