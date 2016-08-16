@@ -1,5 +1,22 @@
 const webpack = require('webpack');
 
+exports.setupCSS = function(paths) {
+  return {
+    module: {
+      loaders: [
+        {
+          test: /\.css$/,
+          loaders: ['style', 'css'],
+          // If include isn't set, Webpack will traverse all files within the base directory.
+          // This can hurt performance! It is a good idea to set up include always.
+          // There's also exclude option that may come in handy. Prefer include, however.
+          include: paths
+        }
+      ]
+    }
+  };
+}
+
 exports.devServer = function(options) {
   return {
 /*
